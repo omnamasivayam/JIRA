@@ -1,0 +1,50 @@
+{
+  "_readme": "Copy this file to config.json and fill in the <PLACEHOLDERS>. Secrets can also come from environment variables (see README).",
+
+  "mode": "jira",
+  "port": 4300,
+
+  "jira": {
+    "deployment": "cloud",
+    "baseUrl": "https://<YOUR-COMPANY>.atlassian.net",
+    "email": "<YOUR-WORK-EMAIL (Cloud only; leave empty for Server/Data Center PAT)>",
+    "apiToken": "<API TOKEN (Cloud) or PERSONAL ACCESS TOKEN (Server/DC)>",
+    "authType": "auto",
+
+    "projectKey": "<PROJECT KEY e.g. ABC>",
+    "boardId": 0,
+
+    "storyIssueType": "Story",
+    "epicIssueType": "Epic",
+
+    "fields": {
+      "storyPoints": "auto",
+      "sprint": "auto",
+      "epicLink": "auto",
+      "acceptanceCriteria": "auto",
+      "testable": "auto"
+    },
+
+    "epicLinkStyle": "auto",
+    "acceptanceCriteriaMode": "auto",
+    "testable": {
+      "mode": "auto",
+      "yesValue": "Yes",
+      "noValue": "No",
+      "yesLabel": "testable",
+      "noLabel": "not-testable"
+    },
+
+    "spilloverLabel": "spillover",
+    "storyJql": "",
+    "maxResults": 500
+  },
+
+  "ai": {
+    "enabled": false,
+    "apiKey": "",
+    "model": "claude-opus-5-5"
+  },
+
+  "pointScale": [1, 2, 3, 5, 8, 13, 21]
+}

@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>SprintPilot</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%235b5bd6'/><path d='M9 21l5-10 4 7 3-4 3 7' stroke='white' stroke-width='2.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <aside class="sidebar">
+    <div class="brand">
+      <div class="logo"><svg viewBox="0 0 32 32"><path d="M9 21l5-10 4 7 3-4 3 7" stroke="currentColor" stroke-width="2.6" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      <div><div class="brand-name">SprintPilot</div><div class="brand-sub" id="projectLabel">—</div></div>
+    </div>
+    <nav id="nav">
+      <button data-view="plan"><span class="ico">◧</span><span>Epic planner</span><kbd>1</kbd></button>
+      <button data-view="sprints"><span class="ico">▤</span><span>Sprint planner</span><kbd>2</kbd></button>
+      <button data-view="compose"><span class="ico">✦</span><span>Quick create</span><kbd>3</kbd></button>
+      <button data-view="sizing"><span class="ico">◈</span><span>Story sizing</span><kbd>4</kbd></button>
+      <button data-view="team"><span class="ico">◉</span><span>Who's on what</span><kbd>5</kbd></button>
+    </nav>
+    <div class="sidebar-foot">
+      <div class="status-line" id="modeBadge"></div>
+      <div class="status-line" id="aiBadge"></div>
+      <div class="foot-actions">
+        <button class="ghost-btn" id="refreshBtn" title="Reload from Jira (R)">⟳ Refresh</button>
+        <button class="ghost-btn" id="themeBtn" title="Toggle theme">◐</button>
+      </div>
+    </div>
+  </aside>
+
+  <main>
+    <header class="topbar">
+      <h1 id="viewTitle">Loading…</h1>
+      <div class="topbar-right">
+        <div class="search"><span>⌕</span><input id="search" placeholder="Filter stories…  ( / )" autocomplete="off" /></div>
+        <button class="btn primary" id="newStoryBtn" title="Quick create (N)">＋ New stories</button>
+      </div>
+    </header>
+    <section id="view" class="view"><div class="loading">Connecting to Jira…</div></section>
+  </main>
+
+  <div id="drawerBackdrop" class="backdrop"></div>
+  <aside id="drawer" class="drawer" aria-hidden="true"></aside>
+  <div id="modalRoot"></div>
+  <div id="toasts" class="toasts"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
